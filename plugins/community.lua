@@ -20,7 +20,9 @@ return {
         },
       },
     },
-  }
+  },
+  { import = "astrocommunity.git.git-blame-nvim" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
