@@ -19,9 +19,13 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>fs"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader><Tab>"] = {":e#<cr>", desc = "Alternate File", silent = true},
-    ["<leader><leader>"] = {":Telescope buffers<cr>"}
+    ["<leader><leader>"] = {":Telescope buffers<cr>"},
+    ["<leader>tb"] = {":GitBlameToggle<cr>", desc = "[T]oggle [B]lame"},
+    
+
+    -- Window Navigation
   },
   t = {
     -- setting a mapping to false will disable it
