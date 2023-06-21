@@ -11,7 +11,10 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(
+            bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
@@ -19,11 +22,19 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    ["<leader>fs"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    ["<leader><Tab>"] = {":e#<cr>", desc = "Alternate File", silent = true},
-    ["<leader><leader>"] = {":Telescope buffers<cr>"},
-    ["<leader>tb"] = {":GitBlameToggle<cr>", desc = "[T]oggle [B]lame"},
-    
+    ["<leader>fs"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+    ["<leader><Tab>"] = { ":e#<cr>", desc = "Alternate File", silent = true },
+    ["<leader><leader>"] = { ":Telescope buffers<cr>" },
+    ["<leader>tb"] = { ":GitBlameToggle<cr>", desc = "[T]oggle [B]lame" },
+
+    ["<leader>x"] = { name = "Test" },
+    ["<leader>xt"] = { require('neotest').run.run, desc = "Run nearest test" },
+    ["<leader>xa"] = { require('neotest').run.attach, desc = "Attach to nearest test" },
+    ["<leader>xx"] = {
+      function() require('neotest').run.run(vim.fn.expand("%")) end,
+      desc = "Run all tests"
+    },
+
 
     -- Window Navigation
   },
