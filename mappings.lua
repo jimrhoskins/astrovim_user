@@ -28,6 +28,7 @@ return {
     ["<leader>tb"] = { ":GitBlameToggle<cr>", desc = "[T]oggle [B]lame" },
 
     ["<leader>x"] = { name = "Test" },
+    ["<leader>xp"] = { require('neotest').output_panel.toggle, desc = "Toggle Test Panel" },
     ["<leader>xt"] = { require('neotest').run.run, desc = "Run nearest test" },
     ["<leader>xa"] = { require('neotest').run.attach, desc = "Attach to nearest test" },
     ["<leader>xx"] = {

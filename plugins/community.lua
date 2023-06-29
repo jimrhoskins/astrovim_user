@@ -1,3 +1,4 @@
+local utils = require "astronvim.utils"
 return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
@@ -23,6 +24,14 @@ return {
   },
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if opts.ensure_installed ~= "all" then
+        opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, "prisma")
+      end
+    end,
+  },
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
